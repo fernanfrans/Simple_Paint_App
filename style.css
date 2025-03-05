@@ -1,0 +1,164 @@
+/* Basic page setup */
+body {
+    font-family: Tahoma, sans-serif; /* Sets the text style */
+    margin: 0; /* Removes space around the page */
+    display: flex;
+    flex-direction: column; /* Stacks elements from top to bottom */
+    height: 100vh; /* Makes the page take up the full screen height */
+    overflow: hidden; /* Hides anything that goes outside the screen */
+}
+
+/* Top bar (header) */
+header {
+    background-color: blue; /* Sets the background to blue */
+    display: flex;
+    justify-content: space-between; /* Spreads out the title and buttons */
+    align-items: center; /* Keeps items in the middle */
+    padding: 10px;
+}
+
+/* Text inside the header */
+.header-text {
+    color: white; /* Makes the text white */
+    margin: 0;
+}
+
+/* Menu bar (navigation) */
+nav {
+    background-color: #EBEAD8; /* Light background */
+    padding: 5px;
+    border-bottom: 1px solid #ccc; /* Adds a thin line at the bottom */
+}
+
+/* List of menu items */
+nav ul {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Adds space between items */
+}
+
+/* Each menu item */
+nav ul li {
+    cursor: pointer; /* Changes mouse to a pointer on hover */
+}
+
+/* Main content area */
+.container {
+    display: flex;
+    flex: 1; /* Fills available space */
+    overflow: hidden; /* Hides anything that overflows */
+}
+
+/* Sidebar (toolbox) */
+aside {
+    background-color: #EBEAD8; /* Light background */
+    padding: 10px;
+    width: 150px; /* Fixed width */
+    border-right: 1px solid #ccc; /* Adds a divider on the right */
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+/* Buttons inside the sidebar */
+aside button {
+    display: block;
+    margin: 10px 0;
+    width: 100%; /* Full width */
+    padding: 5px;
+    cursor: pointer; /* Changes cursor on hover */
+}
+
+/* Input box and message text */
+aside input, aside p {
+    background: white; /* White background */
+    font-size: 1rem;
+    border: black 1px solid; /* Thin black border */
+    display: block;
+    margin: 10px 0;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Keeps size consistent */
+    padding: 5px;
+}
+
+/* The main drawing area */
+main {
+    flex: 1; /* Takes up remaining space */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EBEAD8; /* Light background */
+    overflow: hidden; /* Hides anything outside the area */
+}
+
+/* The box that holds the drawing canvas */
+#canvas-container {
+    aspect-ratio: 16/9; /* Keeps the box in a 16:9 shape */
+    width: auto;
+    max-height: 100%;
+    position: relative;
+    overflow: hidden; /* Hides anything outside */
+    border: 1px solid black; /* Adds a black border */
+}
+
+/* The actual drawing area */
+canvas {
+    width: 100%; /* Takes up full space */
+}
+
+/* Bottom section (color picker) */
+footer {
+    background-color: #EBEAD8; /* Light background */
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0; /* Keeps size fixed */
+}
+
+/* Holds the color options */
+.color-palette {
+    display: flex;
+    gap: 20px; /* Space between items */
+}
+
+#selected-color {
+    width: 100px;
+    height: 100px;
+}
+
+/* Holds the color buttons */
+.color-options {
+    display: flex;
+    flex-direction: column; /* Stacks colors in columns */
+    gap: 10px;
+}
+
+/* A row of color buttons */
+.color-options-row {
+    display: flex;
+    gap: 10px;
+}
+
+/* Each color button */
+.color-options-row button {
+    width: 45px;
+    height: 45px;
+    cursor: pointer; /* Changes mouse to pointer */
+    border: none;
+    border-radius: 2.5px; /* Slightly rounded corners */
+}
+
+/* Adds shadows to elements for a 3D effect */
+.shadow {
+    box-shadow:
+        inset 3px 3px 10px rgba(0, 0, 0, 0.3), /* Inner shadow */
+        5px 5px 7px rgba(0, 0, 0, 0.3); /* Outer shadow */
+}
+
+/* Smaller shadow effect */
+.shadow-mini {
+    box-shadow:
+        inset 3px 3px 6px rgba(0, 0, 0, 0.2);
+}

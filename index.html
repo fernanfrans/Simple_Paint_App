@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"> <!-- Sets character encoding to UTF-8 -->
+    <meta name="viewport" content="width=device-width"> <!-- Ensures proper rendering on mobile devices -->
+    <link href="style.css" rel="stylesheet" type="text/css" /> <!-- Links an external CSS file for styling -->
+    <title>Paint App</title> <!-- Sets the title of the webpage -->
+    <script src="script.js"></script> <!-- Links an external JavaScript file for functionality -->
+    
+  </head>
+  <body>
+    <!-- Header section with application title and window controls -->
+    <header class="shadow">
+      <h2 class="header-text">UX Dev - Paint</h2>
+      <div class="window-controls">
+        <button>_</button> <!-- Minimize button -->
+        <button>[ ]</button> <!-- Maximize/Restore button -->
+        <button>X</button> <!-- Close button -->
+      </div>
+    </header>
+
+    <!-- Navigation bar with menu options -->
+    <nav class="shadow">
+      <ul>
+        <li>File</li>
+        <li>Edit</li>
+        <li>View</li>
+        <li>Image</li>
+        <li>Colors</li>
+        <li>Help</li>
+      </ul>
+    </nav>
+
+    <!-- Main container for tools and canvas -->
+    <div class="container">
+      <!-- Sidebar containing drawing tools and status messages -->
+      <aside class="shadow">
+        <h3>Tools</h3>
+        <button onclick="clearCanvas()">Clear Canvas</button> <!-- Clears the canvas -->
+        <button onclick="changetoBrush()">Brush</button> <!-- Selects the brush tool -->
+        <button onclick="changetoEraser()">Eraser</button> <!-- Selects the eraser tool -->
+        <input type="text" autocomplete="off" placeholder="Send message"> <!-- Input field for messages -->
+        <p>Connecting to Server...</p> <!-- Status message for server connection -->
+      </aside>
+
+      <!-- Main drawing area where the canvas will be placed -->
+      <main class="shadow">
+        <div id="canvas-container">
+        </div>
+      </main>
+    </div>
+
+    <!-- Footer with color palette for brush selection -->
+    <footer class="shadow">
+      <div class="color-palette">
+        <!-- Displays the currently selected color -->
+        <div id="selected-color" style="background-color: black; border-radius: 2.5px;"></div>
+        
+        <!-- Color selection options -->
+        <div class="color-options">
+          <div class="color-options-row">
+            <button onclick = "changeColor(0,0,0)" class="shadow-mini" style="background-color: black;"></button>
+            <button onclick = "changeColor(139,69,19)" class="shadow-mini" style="background-color: saddlebrown;"></button>
+            <button onclick = "changeColor(255,165,0)" class="shadow-mini" style="background-color: orange;"></button>
+            <button onclick = "changeColor(255,255,0)" class="shadow-mini" style="background-color: yellow;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: lime;"></button>
+            <button onclick = "changeColor()" class="shadow-mini" style="background-color: cyan;"></button>
+          </div>
+          <div class="color-options-row">
+            <button onclick = "changeColor(255,255,255)" class="shadow-mini" style="background-color: white;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: gray;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: red;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: deeppink;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: fuchsia;"></button>
+            <button onclick = "changeColor(0,255,0)" class="shadow-mini" style="background-color: blue;"></button>
+          </div>
+        </div> 
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
+  </body>
+</html>
